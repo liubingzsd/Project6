@@ -18,6 +18,60 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\include\opencv2\core.hpp" />
+    <ClInclude Include="core\include\opencv2\core\base.hpp" />
+    <ClInclude Include="core\include\opencv2\core\core_c.h" />
+    <ClInclude Include="core\include\opencv2\core\cvdef.h" />
+    <ClInclude Include="core\include\opencv2\core\cvstd.hpp" />
+    <ClInclude Include="core\include\opencv2\core\cvstd.inl.hpp" />
+    <ClInclude Include="core\include\opencv2\core\fast_math.hpp" />
+    <ClInclude Include="core\include\opencv2\core\mat.hpp" />
+    <ClInclude Include="core\include\opencv2\core\mat.inl.hpp" />
+    <ClInclude Include="core\include\opencv2\core\matx.hpp" />
+    <ClInclude Include="core\include\opencv2\core\operations.hpp" />
+    <ClInclude Include="core\include\opencv2\core\private.hpp" />
+    <ClInclude Include="core\include\opencv2\core\ptr.inl.hpp" />
+    <ClInclude Include="core\include\opencv2\core\saturate.hpp" />
+    <ClInclude Include="core\include\opencv2\core\traits.hpp" />
+    <ClInclude Include="core\include\opencv2\core\types.hpp" />
+    <ClInclude Include="core\include\opencv2\core\types_c.h" />
+    <ClInclude Include="core\include\opencv2\core\utility.hpp" />
+    <ClInclude Include="core\include\opencv2\core\hal\hal.hpp" />
+    <ClInclude Include="core\include\opencv2\core\hal\interface.h" />
+    <ClInclude Include="core\include\opencv2\core\utils\trace.hpp" />
+    <ClInclude Include="core\src\arithm_core.hpp" />
+    <ClInclude Include="core\src\arithm_simd.hpp" />
+    <ClInclude Include="core\src\hal_replacement.hpp" />
+    <ClInclude Include="core\src\precomp.hpp" />
+    <ClInclude Include="imgproc\include\opencv2\imgproc.hpp" />
+    <ClInclude Include="imgproc\include\opencv2\imgproc\hal\hal.hpp" />
+    <ClInclude Include="imgproc\include\opencv2\imgproc\hal\interface.h" />
+    <ClInclude Include="imgproc\include\opencv2\imgproc\imgproc_c.h" />
+    <ClInclude Include="imgproc\include\opencv2\imgproc\types_c.h" />
+    <ClInclude Include="imgproc\src\filterengine.hpp" />
+    <ClInclude Include="imgproc\src\hal_replacement.hpp" />
+    <ClInclude Include="imgproc\src\precomp.hpp" />
+    <ClInclude Include="video\include\opencv2\video.hpp" />
+    <ClInclude Include="video\include\opencv2\video\tracking.hpp" />
+    <ClInclude Include="video\src\lkpyramid.hpp" />
+    <ClInclude Include="video\src\precomp.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core\src\matrix_expressions.cpp" />
+    <ClCompile Include="core\src\matrix_operations.cpp" />
+    <ClCompile Include="core\src\minmax.cpp" />
+    <ClCompile Include="core\src\parallel.cpp" />
+    <ClCompile Include="imgproc\src\thresh.cpp" />
+    <ClCompile Include="imgproc\src\color.cpp" />
+    <ClCompile Include="imgproc\src\corner.cpp" />
+    <ClCompile Include="imgproc\src\cornersubpix.cpp" />
+    <ClCompile Include="imgproc\src\deriv.cpp" />
+    <ClCompile Include="imgproc\src\featureselect.cpp" />
+    <ClCompile Include="imgproc\src\filter.cpp" />
+    <ClCompile Include="imgproc\src\morph.cpp" />
+    <ClCompile Include="video\src\lkpyramid.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{66212FD4-3A70-48B2-92BF-C08CE9C381C4}</ProjectGuid>
@@ -114,8 +168,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

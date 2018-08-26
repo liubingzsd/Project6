@@ -14,4 +14,158 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\include\opencv2\core\cvdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\include\opencv2\imgproc\hal\interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\base.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\cvstd.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\mat.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\mat.inl.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\utility.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\matx.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\ptr.inl.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\types.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\hal\hal.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\hal\interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\src\precomp.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\include\opencv2\imgproc.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\include\opencv2\imgproc\hal\hal.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\src\hal_replacement.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\src\filterengine.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\src\precomp.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\private.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\src\hal_replacement.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\src\arithm_core.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\src\arithm_simd.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\utils\trace.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\traits.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\operations.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\saturate.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\fast_math.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\include\opencv2\imgproc\types_c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\core_c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\types_c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgproc\include\opencv2\imgproc\imgproc_c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="video\src\precomp.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="video\include\opencv2\video.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="video\include\opencv2\video\tracking.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="video\src\lkpyramid.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="core\include\opencv2\core\cvstd.inl.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core\src\parallel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\color.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\corner.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\deriv.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\featureselect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\filter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\src\matrix_operations.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\src\matrix_expressions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\morph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\cornersubpix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="video\src\lkpyramid.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\src\minmax.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgproc\src\thresh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
