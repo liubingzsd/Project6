@@ -1787,21 +1787,21 @@ namespace cv
 	{
 		CV_INSTRUMENT_REGION()
 
-			Mat kernel = _kernel.getMat();
+		Mat kernel = _kernel.getMat();
 		Size ksize = !kernel.empty() ? kernel.size() : Size(3, 3);
 		anchor = normalizeAnchor(anchor, ksize);
-
+/*
 		CV_OCL_RUN(_dst.isUMat() && _src.dims() <= 2 && _src.channels() <= 4 &&
 			borderType == cv::BORDER_CONSTANT && borderValue == morphologyDefaultBorderValue() &&
 			(op == MORPH_ERODE || op == MORPH_DILATE) &&
 			anchor.x == ksize.width >> 1 && anchor.y == ksize.height >> 1,
-			ocl_morphOp(_src, _dst, kernel, anchor, iterations, op, borderType, borderValue))
-
-			if (iterations == 0 || kernel.rows*kernel.cols == 1)
-			{
-				_src.copyTo(_dst);
-				return;
-			}
+		ocl_morphOp(_src, _dst, kernel, anchor, iterations, op, borderType, borderValue))
+*/
+		if (iterations == 0 || kernel.rows*kernel.cols == 1)
+		{
+			_src.copyTo(_dst);
+			return;
+		}
 
 		if (kernel.empty())
 		{
@@ -1864,8 +1864,7 @@ void cv::dilate(InputArray src, OutputArray dst, InputArray kernel,
 	int borderType, const Scalar& borderValue)
 {
 	CV_INSTRUMENT_REGION()
-
-		morphOp(MORPH_DILATE, src, dst, kernel, anchor, iterations, borderType, borderValue);
+	morphOp(MORPH_DILATE, src, dst, kernel, anchor, iterations, borderType, borderValue);
 }
 
 #ifdef HAVE_OPENCL

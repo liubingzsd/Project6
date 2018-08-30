@@ -295,8 +295,7 @@ namespace cv
 void cv::cvtColor(InputArray _src, OutputArray _dst, int code, int dcn)
 {
 	int stype = _src.type();
-	int scn = CV_MAT_CN(stype), depth = CV_MAT_DEPTH(stype), uidx, gbits, ycn;
-
+	int scn = CV_MAT_CN(stype), depth = CV_MAT_DEPTH(stype);
 
 	Mat src, dst;
 	if (_src.getObj() == _dst.getObj()) // inplace processing (#6653)

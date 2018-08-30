@@ -21,29 +21,64 @@
   <ItemGroup>
     <ClInclude Include="core\include\opencv2\core.hpp" />
     <ClInclude Include="core\include\opencv2\core\base.hpp" />
+    <ClInclude Include="core\include\opencv2\core\bufferpool.hpp" />
     <ClInclude Include="core\include\opencv2\core\core_c.h" />
+    <ClInclude Include="core\include\opencv2\core\cuda.hpp" />
+    <ClInclude Include="core\include\opencv2\core\cuda.inl.hpp" />
+    <ClInclude Include="core\include\opencv2\core\cuda_types.hpp" />
     <ClInclude Include="core\include\opencv2\core\cvdef.h" />
     <ClInclude Include="core\include\opencv2\core\cvstd.hpp" />
     <ClInclude Include="core\include\opencv2\core\cvstd.inl.hpp" />
+    <ClInclude Include="core\include\opencv2\core\cv_cpu_dispatch.h" />
+    <ClInclude Include="core\include\opencv2\core\cv_cpu_helper.h" />
     <ClInclude Include="core\include\opencv2\core\fast_math.hpp" />
+    <ClInclude Include="core\include\opencv2\core\hal\hal.hpp" />
+    <ClInclude Include="core\include\opencv2\core\hal\interface.h" />
+    <ClInclude Include="core\include\opencv2\core\hal\intrin.hpp" />
+    <ClInclude Include="core\include\opencv2\core\hal\intrin_cpp.hpp" />
     <ClInclude Include="core\include\opencv2\core\mat.hpp" />
     <ClInclude Include="core\include\opencv2\core\mat.inl.hpp" />
     <ClInclude Include="core\include\opencv2\core\matx.hpp" />
+    <ClInclude Include="core\include\opencv2\core\ocl.hpp" />
+    <ClInclude Include="core\include\opencv2\core\opengl.hpp" />
     <ClInclude Include="core\include\opencv2\core\operations.hpp" />
+    <ClInclude Include="core\include\opencv2\core\persistence.hpp" />
+    <ClInclude Include="core\include\opencv2\core\private.cuda.hpp" />
     <ClInclude Include="core\include\opencv2\core\private.hpp" />
     <ClInclude Include="core\include\opencv2\core\ptr.inl.hpp" />
     <ClInclude Include="core\include\opencv2\core\saturate.hpp" />
+    <ClInclude Include="core\include\opencv2\core\softfloat.hpp" />
     <ClInclude Include="core\include\opencv2\core\traits.hpp" />
     <ClInclude Include="core\include\opencv2\core\types.hpp" />
     <ClInclude Include="core\include\opencv2\core\types_c.h" />
     <ClInclude Include="core\include\opencv2\core\utility.hpp" />
-    <ClInclude Include="core\include\opencv2\core\hal\hal.hpp" />
-    <ClInclude Include="core\include\opencv2\core\hal\interface.h" />
+    <ClInclude Include="core\include\opencv2\core\utils\configuration.private.hpp" />
     <ClInclude Include="core\include\opencv2\core\utils\trace.hpp" />
+    <ClInclude Include="core\include\opencv2\core\version.hpp" />
     <ClInclude Include="core\src\arithm_core.hpp" />
     <ClInclude Include="core\src\arithm_simd.hpp" />
+    <ClInclude Include="core\src\bufferpool.impl.hpp" />
+    <ClInclude Include="core\src\convert.hpp" />
+    <ClInclude Include="core\src\hal_internal.hpp" />
+    <ClInclude Include="core\src\mathfuncs_core.simd.hpp" />
+    <ClInclude Include="core\src\parallel_impl.hpp" />
+    <ClInclude Include="core\src\persistence.hpp" />
+    <ClInclude Include="core\src\stat.hpp" />
+    <ClInclude Include="core\src\stat.simd.hpp" />
+    <ClInclude Include="core\src\umatrix.hpp" />
+    <ClInclude Include="features2d\src\fast_score.hpp" />
+    <ClInclude Include="features2d\src\hal_replacement.hpp" />
+    <ClInclude Include="highgui\include\opencv2\highgui.hpp" />
+    <ClInclude Include="highgui\include\opencv2\highgui\highgui_c.h" />
+    <ClInclude Include="highgui\src\precomp.hpp" />
+    <ClInclude Include="imgcodecs\include\opencv2\imgcodecs.hpp" />
+    <ClInclude Include="imgcodecs\include\opencv2\imgcodecs\imgcodecs_c.h" />
+    <ClInclude Include="imgcodecs\src\precomp.hpp" />
+    <ClInclude Include="imgproc\src\fixedpoint.inl.hpp" />
     <ClInclude Include="core\src\hal_replacement.hpp" />
     <ClInclude Include="core\src\precomp.hpp" />
+    <ClInclude Include="features2d\include\opencv2\features2d.hpp" />
+    <ClInclude Include="features2d\src\precomp.hpp" />
     <ClInclude Include="imgproc\include\opencv2\imgproc.hpp" />
     <ClInclude Include="imgproc\include\opencv2\imgproc\hal\hal.hpp" />
     <ClInclude Include="imgproc\include\opencv2\imgproc\hal\interface.h" />
@@ -51,17 +86,93 @@
     <ClInclude Include="imgproc\include\opencv2\imgproc\types_c.h" />
     <ClInclude Include="imgproc\src\filterengine.hpp" />
     <ClInclude Include="imgproc\src\hal_replacement.hpp" />
+    <ClInclude Include="imgproc\src\imgwarp.hpp" />
     <ClInclude Include="imgproc\src\precomp.hpp" />
+    <ClInclude Include="videoio\include\opencv2\videoio.hpp" />
+    <ClInclude Include="videoio\include\opencv2\videoio\container_avi.private.hpp" />
+    <ClInclude Include="videoio\include\opencv2\videoio\videoio_c.h" />
+    <ClInclude Include="videoio\src\precomp.hpp" />
     <ClInclude Include="video\include\opencv2\video.hpp" />
     <ClInclude Include="video\include\opencv2\video\tracking.hpp" />
     <ClInclude Include="video\src\lkpyramid.hpp" />
     <ClInclude Include="video\src\precomp.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="core\src\algorithm.cpp" />
+    <ClCompile Include="core\src\alloc.cpp" />
+    <ClCompile Include="core\src\arithm.cpp" />
+    <ClCompile Include="core\src\array.cpp" />
+    <ClCompile Include="core\src\channels.cpp" />
+    <ClCompile Include="core\src\convert.cpp" />
+    <ClCompile Include="core\src\convert_scale.cpp" />
+    <ClCompile Include="core\src\copy.cpp" />
+    <ClCompile Include="core\src\count_non_zero.cpp" />
+    <ClCompile Include="core\src\cuda_gpu_mat.cpp" />
+    <ClCompile Include="core\src\cuda_host_mem.cpp" />
+    <ClCompile Include="core\src\cuda_stream.cpp" />
+    <ClCompile Include="core\src\datastructs.cpp" />
+    <ClCompile Include="core\src\dxt.cpp" />
+    <ClCompile Include="core\src\kmeans.cpp" />
+    <ClCompile Include="core\src\lapack.cpp" />
+    <ClCompile Include="core\src\lda.cpp" />
+    <ClCompile Include="core\src\mathfuncs.cpp" />
+    <ClCompile Include="core\src\mathfuncs_core.dispatch.cpp" />
+    <ClCompile Include="core\src\matmul.cpp" />
+    <ClCompile Include="core\src\matrix.cpp" />
+    <ClCompile Include="core\src\matrix_c.cpp" />
+    <ClCompile Include="core\src\matrix_decomp.cpp" />
     <ClCompile Include="core\src\matrix_expressions.cpp" />
+    <ClCompile Include="core\src\matrix_iterator.cpp" />
     <ClCompile Include="core\src\matrix_operations.cpp" />
+    <ClCompile Include="core\src\matrix_sparse.cpp" />
+    <ClCompile Include="core\src\matrix_warp.cpp" />
+    <ClCompile Include="core\src\mean.cpp" />
+    <ClCompile Include="core\src\merge.cpp" />
     <ClCompile Include="core\src\minmax.cpp" />
+    <ClCompile Include="core\src\norm.cpp" />
+    <ClCompile Include="core\src\opengl.cpp" />
+    <ClCompile Include="core\src\out.cpp" />
     <ClCompile Include="core\src\parallel.cpp" />
+    <ClCompile Include="core\src\parallel_impl.cpp" />
+    <ClCompile Include="core\src\pca.cpp" />
+    <ClCompile Include="core\src\persistence.cpp" />
+    <ClCompile Include="core\src\persistence_base64.cpp" />
+    <ClCompile Include="core\src\persistence_c.cpp" />
+    <ClCompile Include="core\src\persistence_cpp.cpp" />
+    <ClCompile Include="core\src\persistence_json.cpp" />
+    <ClCompile Include="core\src\persistence_types.cpp" />
+    <ClCompile Include="core\src\persistence_xml.cpp" />
+    <ClCompile Include="core\src\persistence_yml.cpp" />
+    <ClCompile Include="core\src\rand.cpp" />
+    <ClCompile Include="core\src\softfloat.cpp" />
+    <ClCompile Include="core\src\spilit.cpp" />
+    <ClCompile Include="core\src\stat.dispatch.cpp" />
+    <ClCompile Include="core\src\stl.cpp" />
+    <ClCompile Include="core\src\sum.cpp" />
+    <ClCompile Include="core\src\system.cpp" />
+    <ClCompile Include="core\src\core_tables.cpp" />
+    <ClCompile Include="core\src\trace.cpp" />
+    <ClCompile Include="core\src\types.cpp" />
+    <ClCompile Include="core\src\umatrix.cpp" />
+    <ClCompile Include="demon\lk_demon.cpp" />
+    <ClCompile Include="features2d\src\fast.cpp" />
+    <ClCompile Include="features2d\src\fast_score.cpp" />
+    <ClCompile Include="features2d\src\feature2d.cpp" />
+    <ClCompile Include="features2d\src\keypoint.cpp" />
+    <ClCompile Include="features2d\src\orb.cpp" />
+    <ClCompile Include="highgui\src\window.cpp" />
+    <ClCompile Include="imgcodecs\src\loadsave.cpp" />
+    <ClCompile Include="imgproc\src\drawing.cpp" />
+    <ClCompile Include="imgproc\src\hershey_fonts.cpp" />
+    <ClCompile Include="imgproc\src\imgwarp.cpp" />
+    <ClCompile Include="imgproc\src\pyramids.cpp" />
+    <ClCompile Include="imgproc\src\resize.cpp" />
+    <ClCompile Include="imgproc\src\samplers.cpp" />
+    <ClCompile Include="imgproc\src\shapedescr.cpp" />
+    <ClCompile Include="imgproc\src\smooth.cpp" />
+    <ClCompile Include="imgproc\src\sumpixels.cpp" />
+    <ClCompile Include="imgproc\src\imgproc_tables.cpp" />
+    <ClCompile Include="imgproc\src\templmatch.cpp" />
     <ClCompile Include="imgproc\src\thresh.cpp" />
     <ClCompile Include="imgproc\src\color.cpp" />
     <ClCompile Include="imgproc\src\corner.cpp" />
@@ -70,6 +181,9 @@
     <ClCompile Include="imgproc\src\featureselect.cpp" />
     <ClCompile Include="imgproc\src\filter.cpp" />
     <ClCompile Include="imgproc\src\morph.cpp" />
+    <ClCompile Include="imgproc\src\utils.cpp" />
+    <ClCompile Include="videoio\src\cap.cpp" />
+    <ClCompile Include="videoio\src\cap_images.cpp" />
     <ClCompile Include="video\src\lkpyramid.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -138,6 +252,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions> /D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

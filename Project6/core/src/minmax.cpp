@@ -9,7 +9,6 @@
 
 namespace cv
 {
-
 	template<typename T, typename WT> static void
 		minMaxIdx_(const T* src, const uchar* mask, WT* _minVal, WT* _maxVal,
 			size_t* _minIdx, size_t* _maxIdx, int len, size_t startIdx)
@@ -112,7 +111,6 @@ namespace cv
 			(MinMaxIdxFunc)GET_OPTIMIZED(minMaxIdx_32f), (MinMaxIdxFunc)GET_OPTIMIZED(minMaxIdx_64f),
 			0
 		};
-
 		return minmaxTab[depth];
 	}
 
@@ -756,27 +754,24 @@ void cv::minMaxIdx(InputArray _src, double* minVal,
 	InputArray _mask)
 {
 	CV_INSTRUMENT_REGION()
-
-		int type = _src.type(), depth = CV_MAT_DEPTH(type), cn = CV_MAT_CN(type);
+	int type = _src.type(), depth = CV_MAT_DEPTH(type), cn = CV_MAT_CN(type);
 	CV_Assert((cn == 1 && (_mask.empty() || _mask.type() == CV_8U)) ||
 		(cn > 1 && _mask.empty() && !minIdx && !maxIdx));
 
-	CV_OCL_RUN(OCL_PERFORMANCE_CHECK(_src.isUMat()) && _src.dims() <= 2 && (_mask.empty() || _src.size() == _mask.size()),
-		ocl_minMaxIdx(_src, minVal, maxVal, minIdx, maxIdx, _mask))
-
-		Mat src = _src.getMat(), mask = _mask.getMat();
-
+//	CV_OCL_RUN(OCL_PERFORMANCE_CHECK(_src.isUMat()) && _src.dims() <= 2 && (_mask.empty() || _src.size() == _mask.size()),
+//	ocl_minMaxIdx(_src, minVal, maxVal, minIdx, maxIdx, _mask))
+	Mat src = _src.getMat(), mask = _mask.getMat();
+/*
 	if (src.dims <= 2)
 		CALL_HAL(minMaxIdx, cv_hal_minMaxIdx, src.data, src.step, src.cols, src.rows, src.depth(), minVal, maxVal,
 			minIdx, maxIdx, mask.data);
 
 	CV_OVX_RUN(!ovx::skipSmallImages<VX_KERNEL_MINMAXLOC>(src.cols, src.rows),
-		openvx_minMaxIdx(src, minVal, maxVal, minIdx, maxIdx, mask))
-
-		CV_IPP_RUN_FAST(ipp_minMaxIdx(src, minVal, maxVal, minIdx, maxIdx, mask))
-
-		MinMaxIdxFunc func = getMinmaxTab(depth);
-	CV_Assert(func != 0);
+	openvx_minMaxIdx(src, minVal, maxVal, minIdx, maxIdx, mask))
+	CV_IPP_RUN_FAST(ipp_minMaxIdx(src, minVal, maxVal, minIdx, maxIdx, mask))
+*/
+	MinMaxIdxFunc func = getMinmaxTab(depth);
+	//CV_Assert(func != 0);
 
 	const Mat* arrays[] = { &src, &mask, 0 };
 	uchar* ptrs[2];
@@ -829,11 +824,11 @@ void cv::minMaxLoc(InputArray _img, double* minVal, double* maxVal,
 {
 	CV_INSTRUMENT_REGION()
 
-		CV_Assert(_img.dims() <= 2);
-
+	CV_Assert(_img.dims() <= 2);
 	minMaxIdx(_img, minVal, maxVal, (int*)minLoc, (int*)maxLoc, mask);
 	if (minLoc)
 		std::swap(minLoc->x, minLoc->y);
 	if (maxLoc)
 		std::swap(maxLoc->x, maxLoc->y);
 }
+

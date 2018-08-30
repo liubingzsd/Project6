@@ -907,14 +907,14 @@ namespace cv
 	/////////////////////////////// AutoBuffer implementation ////////////////////////////////////////
 
 	template<typename _Tp, size_t fixed_size> inline
-		AutoBuffer<_Tp, fixed_size>::AutoBuffer()
+	AutoBuffer<_Tp, fixed_size>::AutoBuffer()
 	{
 		ptr = buf;
 		sz = fixed_size;
 	}
 
 	template<typename _Tp, size_t fixed_size> inline
-		AutoBuffer<_Tp, fixed_size>::AutoBuffer(size_t _size)
+	AutoBuffer<_Tp, fixed_size>::AutoBuffer(size_t _size)
 	{
 		ptr = buf;
 		sz = fixed_size;
@@ -932,7 +932,7 @@ namespace cv
 	}
 
 	template<typename _Tp, size_t fixed_size> inline AutoBuffer<_Tp, fixed_size>&
-		AutoBuffer<_Tp, fixed_size>::operator = (const AutoBuffer<_Tp, fixed_size>& abuf)
+	AutoBuffer<_Tp, fixed_size>::operator = (const AutoBuffer<_Tp, fixed_size>& abuf)
 	{
 		if (this != &abuf)
 		{
@@ -945,13 +945,13 @@ namespace cv
 	}
 
 	template<typename _Tp, size_t fixed_size> inline
-		AutoBuffer<_Tp, fixed_size>::~AutoBuffer()
+	AutoBuffer<_Tp, fixed_size>::~AutoBuffer()
 	{
 		deallocate();
 	}
 
 	template<typename _Tp, size_t fixed_size> inline void
-		AutoBuffer<_Tp, fixed_size>::allocate(size_t _size)
+	AutoBuffer<_Tp, fixed_size>::allocate(size_t _size)
 	{
 		if (_size <= sz)
 		{
@@ -967,7 +967,7 @@ namespace cv
 	}
 
 	template<typename _Tp, size_t fixed_size> inline void
-		AutoBuffer<_Tp, fixed_size>::deallocate()
+	AutoBuffer<_Tp, fixed_size>::deallocate()
 	{
 		if (ptr != buf)
 		{
@@ -978,7 +978,7 @@ namespace cv
 	}
 
 	template<typename _Tp, size_t fixed_size> inline void
-		AutoBuffer<_Tp, fixed_size>::resize(size_t _size)
+	AutoBuffer<_Tp, fixed_size>::resize(size_t _size)
 	{
 		if (_size <= sz)
 		{
@@ -1002,7 +1002,7 @@ namespace cv
 	}
 
 	template<typename _Tp, size_t fixed_size> inline size_t
-		AutoBuffer<_Tp, fixed_size>::size() const
+	AutoBuffer<_Tp, fixed_size>::size() const
 	{
 		return sz;
 	}
@@ -1191,7 +1191,6 @@ namespace cv
 	}
 
 	namespace utils {
-
 		CV_EXPORTS int getThreadID();
 
 	} // namespace

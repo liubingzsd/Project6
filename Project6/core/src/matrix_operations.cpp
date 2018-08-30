@@ -168,12 +168,12 @@ void cv::setIdentity(InputOutputArray _m, const Scalar& s)
 {
 	CV_INSTRUMENT_REGION()
 
-		CV_Assert(_m.dims() <= 2);
+	CV_Assert(_m.dims() <= 2);
 
-	CV_OCL_RUN(_m.isUMat(),
-		ocl_setIdentity(_m, s))
+//	CV_OCL_RUN(_m.isUMat(),
+//	ocl_setIdentity(_m, s))
 
-		Mat m = _m.getMat();
+	Mat m = _m.getMat();
 	int rows = m.rows, cols = m.cols, type = m.type();
 
 	if (type == CV_32FC1)
@@ -215,7 +215,7 @@ cv::Scalar cv::trace(InputArray _m)
 {
 	CV_INSTRUMENT_REGION()
 
-		Mat m = _m.getMat();
+	Mat m = _m.getMat();
 	CV_Assert(m.dims <= 2);
 	int type = m.type();
 	int nm = std::min(m.rows, m.cols);
@@ -484,10 +484,10 @@ void cv::transpose(InputArray _src, OutputArray _dst)
 		int type = _src.type(), esz = CV_ELEM_SIZE(type);
 	CV_Assert(_src.dims() <= 2 && esz <= 32);
 
-	CV_OCL_RUN(_dst.isUMat(),
-		ocl_transpose(_src, _dst))
+//	CV_OCL_RUN(_dst.isUMat(),
+//	ocl_transpose(_src, _dst))
 
-		Mat src = _src.getMat();
+	Mat src = _src.getMat();
 	if (src.empty())
 	{
 		_dst.release();
@@ -529,7 +529,7 @@ void cv::completeSymm(InputOutputArray _m, bool LtoR)
 {
 	CV_INSTRUMENT_REGION()
 
-		Mat m = _m.getMat();
+	Mat m = _m.getMat();
 	size_t step = m.step, esz = m.elemSize();
 	CV_Assert(m.dims <= 2 && m.rows == m.cols);
 
@@ -965,11 +965,11 @@ void cv::reduce(InputArray _src, OutputArray _dst, int dim, int op, int dtype)
 	CV_Assert(op == CV_REDUCE_SUM || op == CV_REDUCE_MAX ||
 		op == CV_REDUCE_MIN || op == CV_REDUCE_AVG);
 
-	CV_OCL_RUN(_dst.isUMat(),
-		ocl_reduce(_src, _dst, dim, op, op0, stype, dtype))
+//	CV_OCL_RUN(_dst.isUMat(),
+//	ocl_reduce(_src, _dst, dim, op, op0, stype, dtype))
 
 		// Fake reference to source. Resolves issue 8693 in case of src == dst.
-		UMat srcUMat;
+	UMat srcUMat;
 	if (_src.isUMat())
 		srcUMat = _src.getUMat();
 

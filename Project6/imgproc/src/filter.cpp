@@ -4846,11 +4846,11 @@ void cv::filter2D(InputArray _src, OutputArray _dst, int ddepth,
 	double delta, int borderType)
 {
 	CV_INSTRUMENT_REGION()
-
-		CV_OCL_RUN(_dst.isUMat() && _src.dims() <= 2,
-			ocl_filter2D(_src, _dst, ddepth, _kernel, anchor0, delta, borderType))
-
-		Mat src = _src.getMat(), kernel = _kernel.getMat();
+/*
+	CV_OCL_RUN(_dst.isUMat() && _src.dims() <= 2,
+	ocl_filter2D(_src, _dst, ddepth, _kernel, anchor0, delta, borderType))
+*/
+	Mat src = _src.getMat(), kernel = _kernel.getMat();
 
 	if (ddepth < 0)
 		ddepth = src.depth();
@@ -4877,12 +4877,12 @@ void cv::sepFilter2D(InputArray _src, OutputArray _dst, int ddepth,
 	double delta, int borderType)
 {
 	CV_INSTRUMENT_REGION()
+/*
+	CV_OCL_RUN(_dst.isUMat() && _src.dims() <= 2 && (size_t)_src.rows() > _kernelY.total() && (size_t)_src.cols() > _kernelX.total(),
+	ocl_sepFilter2D(_src, _dst, ddepth, _kernelX, _kernelY, anchor, delta, borderType))
+*/
 
-		CV_OCL_RUN(_dst.isUMat() && _src.dims() <= 2 && (size_t)_src.rows() > _kernelY.total() && (size_t)_src.cols() > _kernelX.total(),
-			ocl_sepFilter2D(_src, _dst, ddepth, _kernelX, _kernelY, anchor, delta, borderType))
-
-		Mat src = _src.getMat(), kernelX = _kernelX.getMat(), kernelY = _kernelY.getMat();
-
+	Mat src = _src.getMat(), kernelX = _kernelX.getMat(), kernelY = _kernelY.getMat();
 	if (ddepth < 0)
 		ddepth = src.depth();
 
@@ -4915,9 +4915,7 @@ cvFilter2D(const CvArr* srcarr, CvArr* dstarr, const CvMat* _kernel, CvPoint anc
 {
 	cv::Mat src = cv::cvarrToMat(srcarr), dst = cv::cvarrToMat(dstarr);
 	cv::Mat kernel = cv::cvarrToMat(_kernel);
-
 	CV_Assert(src.size() == dst.size() && src.channels() == dst.channels());
-
 	cv::filter2D(src, dst, dst.depth(), kernel, anchor, 0, cv::BORDER_REPLICATE);
 }
 

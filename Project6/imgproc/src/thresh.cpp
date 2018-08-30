@@ -1171,11 +1171,11 @@ namespace cv
 
 			Mat srcStripe = src.rowRange(row0, row1);
 			Mat dstStripe = dst.rowRange(row0, row1);
-
+/*
 			CALL_HAL(threshold, cv_hal_threshold, srcStripe.data, srcStripe.step, dstStripe.data, dstStripe.step,
 				srcStripe.cols, srcStripe.rows, srcStripe.depth(), srcStripe.channels(),
 				thresh, maxval, thresholdType);
-
+*/
 			if (srcStripe.depth() == CV_8U)
 			{
 				thresh_8u(srcStripe, dstStripe, (uchar)thresh, (uchar)maxval, thresholdType);
@@ -1350,11 +1350,11 @@ namespace cv
 double cv::threshold(InputArray _src, OutputArray _dst, double thresh, double maxval, int type)
 {
 	CV_INSTRUMENT_REGION()
-
-		CV_OCL_RUN_(_src.dims() <= 2 && _dst.isUMat(),
-			ocl_threshold(_src, _dst, thresh, maxval, type), thresh)
-
-		Mat src = _src.getMat();
+/*
+	CV_OCL_RUN_(_src.dims() <= 2 && _dst.isUMat(),
+	ocl_threshold(_src, _dst, thresh, maxval, type), thresh)
+*/
+	Mat src = _src.getMat();
 	int automatic_thresh = (type & ~CV_THRESH_MASK);
 	type &= THRESH_MASK;
 
@@ -1397,11 +1397,11 @@ double cv::threshold(InputArray _src, OutputArray _dst, double thresh, double ma
 				src.copyTo(dst);
 			return thresh;
 		}
-
+/*
 		CV_OVX_RUN(!ovx::skipSmallImages<VX_KERNEL_THRESHOLD>(src.cols, src.rows),
-			openvx_threshold(src, dst, ithresh, imaxval, type), (double)ithresh)
-
-			thresh = ithresh;
+		openvx_threshold(src, dst, ithresh, imaxval, type), (double)ithresh)
+*/
+		thresh = ithresh;
 		maxval = imaxval;
 	}
 	else if (src.depth() == CV_16S)
@@ -1478,7 +1478,7 @@ void cv::adaptiveThreshold(InputArray _src, OutputArray _dst, double maxValue,
 {
 	CV_INSTRUMENT_REGION()
 
-		Mat src = _src.getMat();
+	Mat src = _src.getMat();
 	CV_Assert(src.type() == CV_8UC1);
 	CV_Assert(blockSize % 2 == 1 && blockSize > 1);
 	Size size = src.size();
@@ -1491,12 +1491,11 @@ void cv::adaptiveThreshold(InputArray _src, OutputArray _dst, double maxValue,
 		dst = Scalar(0);
 		return;
 	}
-
+/*
 	CALL_HAL(adaptiveThreshold, cv_hal_adaptiveThreshold, src.data, src.step, dst.data, dst.step, src.cols, src.rows,
 		maxValue, method, type, blockSize, delta);
-
+*/
 	Mat mean;
-
 	if (src.data != dst.data)
 		mean = dst;
 

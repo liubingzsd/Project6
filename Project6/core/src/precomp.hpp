@@ -2,12 +2,14 @@
 #define __OPENCV_PRECOMP_H__
 
 #include "../include/opencv2/core/utility.hpp"
-//#include "opencv2/core/core_c.h"
-
+#include "../include/opencv2/core/core_c.h"
+#include "../include/opencv2/core/cuda.hpp"
+#include "../include/opencv2/core/opengl.hpp"
 //#include "opencv2/core/va_intel.hpp"
 
 #include "../include/opencv2/core/private.hpp"
-//#include "opencv2/core/private.cuda.hpp"
+#include "../include/opencv2/core/private.cuda.hpp"
+
 #ifdef HAVE_OPENCL
 #include "opencv2/core/ocl.hpp"
 #endif
@@ -36,7 +38,7 @@
 #define USE_AVX2  (cv::checkHardwareSupport(CV_CPU_AVX2))
 
 #include "../include/opencv2/core/hal/hal.hpp"
-//#include "opencv2/core/hal/intrin.hpp"
+#include "../include/opencv2/core/hal/intrin.hpp"
 //#include "opencv2/core/sse_utils.hpp"
 //#include "opencv2/core/neon_utils.hpp"
 //#include "opencv2/core/vsx_utils.hpp"
@@ -241,7 +243,7 @@ namespace cv
 		RNG rng;
 		//#ifdef HAVE_OPENCL
 		int device; // device index of an array of devices in a context, see also Device::getDefault
-		ocl::Queue oclQueue; // the queue used for running a kernel, see also getQueue, Kernel::run
+//		ocl::Queue oclQueue; // the queue used for running a kernel, see also getQueue, Kernel::run
 		int useOpenCL; // 1 - use, 0 - do not use, -1 - auto/not initialized
 					   //#endif
 		int useIPP;    // 1 - use, 0 - do not use, -1 - auto/not initialized
